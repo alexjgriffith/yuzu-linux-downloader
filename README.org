@@ -1,0 +1,27 @@
+#+TITLE: Yuzu Linux Downloader
+
+Presently (Spring 2020) there is no linux installer for Yuzu. Unfortunately, the =earlyaccess= channel is only available via the installer. Meaning that in order to get an early access version of the emulator you first need to download the source onto a windows virtual machine, to be built on your linux machine.
+
+This script removes the requirement of using the installer. It downloads the windows version directly from https://api.yuzu-emu.org/, patches it to be compatible with linux, and builds it in a user defined directory.
+
+Note, in order to access the =earlyaccess= branch follow the instructions on https://yuzu-emu.org/help/early-access/
+
+** Usage
+Before running the script make sure it has permission to execute.
+
+#+BEGIN_SRC: bash
+chmod +x ./yuzu-early-access.sh
+#+END_SRC
+
+#+BEGIN_SRC: bash
+./yuzu-linux-downloader.sh [-c CHANNEL ] [-d DIRECTORY] LOGIN_TOKEN
+#+END_SRC
+
+- Get your =LOGIN_TOKEN= from https://profile.yuzu-emu.org/
+
+Currently the only =CHANNEL= is =earlyaccess=, others can be added in the future. I just don't know their api endpoints.
+
+=DIRECTORY= is where the yuzu program will be downloaded and compiled. It Defaults to pwd.
+
+Once installed yuzu can be run via =./$DIRECTORY/$BUILDNAME/build/bin/yuzu=. =BUILDNAME= is dictated by https://api.yuzu-emu.org/
+
