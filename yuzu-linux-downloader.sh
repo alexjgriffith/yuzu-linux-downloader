@@ -70,7 +70,7 @@ cd $FILE
 find -type f -exec sed -i 's/\r$//' {} ';'
 
 echo "Patching windows build to work with linux."
-wget http://ix.io/2lDP && patch -p1 < 2lDP
+wget http://ix.io/2mBY && patch -p1 < 2mBY
 mkdir build && cd build
 cmake .. -GNinja
 ninja
